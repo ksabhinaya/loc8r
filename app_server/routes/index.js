@@ -1,17 +1,19 @@
-var express=require('express');
+
+var express = require('express');
 var router = express.Router();
-var ctrlLocations=require('../controllers/locations.js');
+var ctrllocation = require('../controller/locations');
+var ctrlothers = require('../controller/others');
 
-var ctrlOthers=require('../controllers/others.js'); 
+/* GET Locations page */
+router.get('/', ctrllocation.homelist);
+router.get('/location', ctrllocation.locationInfo);
+router.get('/location/review/new', ctrllocation.addReview);
 
-/* Locations pages */
+/*GET others page */
+router.get('/about', ctrlothers.about);
 
-router.get('/', ctrlLocations.homelist);
-router.get('/location',ctrlLocations.locationInfo);
-router.get('/location/review/new', ctrlLocations.addReview);
+router.get('/signin', ctrlothers.signin);
 
-/* Other pages */
+router.get('/register', ctrlothers.register);
 
-router.get('/about', ctrlOthers.about);
-
-module.exports=router;
+module.exports = router;
