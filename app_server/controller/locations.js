@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 module.exports.homelist = function(req, res) {
     res.render('location-list', {
         title: 'Smart timetable-helps you create a daily or weekly timetable',
