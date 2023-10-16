@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const openingTimeSchema = new mongoose.Schema({
   days: {
     type: String,
@@ -49,4 +48,6 @@ const locationSchema = new mongoose.Schema({
   reviews: [reviewSchema]
 });
 
-mongoose.model('Location', locationSchema);
+const Locations = mongoose.model('Location', locationSchema);
+
+module.exports = Locations;
